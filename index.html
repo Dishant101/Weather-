@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myWeather </title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: "Helvetica Neue", sans-serif;
+    }
+    .searchBtn:hover {
+      background-color: #bae6fd;
+    }
+    .weatherImg {
+      transition: transform 0.3s;
+    }
+    .weatherImg:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-blue-300 min-h-screen flex items-center justify-center">
+  <div class="main w-full max-w-4xl p-5">
+    <h2 class="text-left text-5xl uppercase text-center mb-5 text-white border:2 hover:border transition-all"  >weather</h2>
+    <div class="container mx-auto h-full flex flex-col items-center justify-center">
+      <div class="search flex p-4 w-full justify-center items-center gap-4 bg-white shadow-lg rounded-lg">
+        <input type="text" class="searchText h-12 w-full max-w-lg rounded-lg bg-[#e6f5fb] outline-none text-lg p-3 shadow-inner" placeholder="Enter your Location">
+        <i class="ri-search-line p-3 flex justify-center items-center w-12 h-12 rounded-full text-2xl bg-[#e6f5fb] searchBtn hover:cursor-pointer transition-all duration-200"></i>
+      </div>
+      <div class="location-not-found hidden text-center mt-10">
+        <h1 class="text-2xl font-semibold text-red-500">Sorry, Location not found!!!</h1>
+        <img src="./Img/404.png" class="w-60 mt-4" alt="404 Error">
+      </div>
+      <div class="weatherMain flex flex-col items-center mt-10 p-6 bg-white shadow-lg rounded-lg">
+        <img src="./Img/cloud.png" class="w-72 weatherImg" alt="Weather Icon">
+        <div class="weatherInfo mt-6 text-center">
+          <h2 class="text-5xl temp font-bold text-black my-4 tracking-tight">0 <sup class="font-semibold">°C</sup></h2>
+          <p class="description text-3xl font-semibold text-gray-700">Light Rain</p>
+          <div class="detail flex flex-col md:flex-row gap-10 md:gap-20 mt-10">
+            <div class="humidity text-center">
+              <i class="ri-water-percent-fill text-blue-600 text-4xl"></i>
+              <h1 class="font-semibold text-black weatherHumidity text-xl mt-2">45%</h1>
+              <h1 class="font-semibold text-gray-600 text-xl">Humidity</h1>
+            </div>
+            <div class="wind text-center">
+              <i class="ri-windy-line text-blue-600 text-4xl"></i>
+              <h1 class="font-semibold text-black windSpeed text-xl mt-2">12 Km/H</h1>
+              <h1 class="font-semibold text-gray-600 text-xl">Wind Speed</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
